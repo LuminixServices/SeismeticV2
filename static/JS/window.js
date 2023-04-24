@@ -39,7 +39,7 @@ function openWindow(url) {
 
   var closeBtn = document.createElement('button');
   closeBtn.className = 'img-btn';
-  closeBtn.innerHTML = '<img src="../img/x.png">';
+  closeBtn.innerHTML = '<img src="../SeismeticImage/x.png">';
   closeBtn.style.marginLeft = 'auto';
   closeBtn.onclick = function() {
     document.body.removeChild(container);
@@ -47,7 +47,7 @@ function openWindow(url) {
 
   var fullscreenBtn = document.createElement('button');
   fullscreenBtn.className = 'img-btn';
-  fullscreenBtn.innerHTML = '<img src="../img/FC.png">';
+  fullscreenBtn.innerHTML = '<img src="../SeismeticImage/FC.png">';
   fullscreenBtn.style.marginLeft = '5px';
   fullscreenBtn.onclick = function() {
     if (iframe.requestFullscreen) {
@@ -99,7 +99,7 @@ function classic(url) {
 
  var closeBtn = document.createElement('button');
  closeBtn.className = 'img-btn';
- closeBtn.innerHTML = '<img src="../img/x.png">';
+ closeBtn.innerHTML = '<img src="../SeismeticImage/x.png">';
  closeBtn.style.marginLeft = 'auto';
  closeBtn.onclick = function() {
    document.body.removeChild(container);
@@ -107,7 +107,7 @@ function classic(url) {
 
  var fullscreenBtn = document.createElement('button');
  fullscreenBtn.className = 'img-btn';
- fullscreenBtn.innerHTML = '<img src="../img/FC.png">';
+ fullscreenBtn.innerHTML = '<img src="../SeismeticImage/FC.png">';
  fullscreenBtn.style.marginLeft = '5px';
  fullscreenBtn.onclick = function() {
    if (iframe.requestFullscreen) {
