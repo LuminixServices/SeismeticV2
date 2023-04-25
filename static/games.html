@@ -29,6 +29,7 @@
     <script src="index.js" defer></script>
     <script src="./JS/window.js" defer></script>
     <script src="./index.js" defer></script>
+    <script src="./JS/find.js" defer></script>
     <link rel="stylesheet" href="./styling/windows.css" />
   </head>
 
@@ -40,8 +41,21 @@
         <li><a href="index.html">Search</a></li>
       </ul>
     </nav> 
-    <a id="my-link" onclick="removeElements()">Remove Particles for more FPS</a>
+    <input class="searchbar" id="searchbar" name="search" onkeyup="search_item()" placeholder="Search.." tag="searchbar" type="text" />
+
     <div class="center">
+      <h1>Games seen on this website are the property of their respective owners.</h1>
+      <!---->
+      <div class="container">
+        <div class="image-container">
+          <img src="./SeismeticImage/request.png" alt="Your Image" class="rounded-image">
+        </div>
+        <div class="text-container">
+          <p>Request a Game!</p>
+          <button onclick="classic('https://forms.gle/tMrFyzvmbsbBNrx58')" id="tab-button">Play</button>
+        </div>
+      </div>
+      <!---->
       <!---->
       <div class="container">
         <div class="image-container">
@@ -65,6 +79,18 @@
         </div>
       </div>
       <!---->
+
+       <!---->
+       <div class="container">
+        <div class="image-container">
+          <img src="SeismeticImage/GAMES/acww.webp" alt="Your Image" class="rounded-image">
+        </div>
+        <div class="text-container">
+          <p>AC - Wild World</p>
+          <button onclick="openWindow('https://static.arcadespot.com/retroemulator.php?system=nds&game=2017/10/animal-crossing-wild-world1.zip')" id="tab-button">Play</button>
+        </div>
+      </div>
+      <!---->
     
       <!---->
       <div class="container">
@@ -80,11 +106,22 @@
       <!---->
       <div class="container">
         <div class="image-container">
+          <img src="SeismeticImage/GAMES/moomooimg.png" alt="Your Image" class="rounded-image">
+        </div>
+        <div class="text-container">
+          <p>Moomoo io</p>
+          <button onclick="openWindow('https://moomoo.io/')" id="tab-button">Play</button>
+        </div>
+      </div>
+      <!---->
+      <!---->
+      <div class="container">
+        <div class="image-container">
           <img src="SeismeticImage/GAMES/pixel-shooter.webp" alt="Your Image" class="rounded-image">
         </div>
         <div class="text-container">
           <p>Pixel Shooter</p>
-          <button onclick="openWindow(''https://94bfktj403i6m18as4vkvtreqd0ohci4-a-sites-opensocial.googleusercontent.com/gadgets/ifr?url=https://274019683-173520394482650759.preview.editmysite.com/uploads/b/139890129-131715539788281629/files/ps.xml')" id="tab-button">Play</button>
+          <button onclick="openWindow('https://94bfktj403i6m18as4vkvtreqd0ohci4-a-sites-opensocial.googleusercontent.com/gadgets/ifr?url=https://274019683-173520394482650759.preview.editmysite.com/uploads/b/139890129-131715539788281629/files/ps.xml')" id="tab-button">Play</button>
         </div>
       </div>
       <!---->
@@ -195,6 +232,17 @@
         <div class="text-container">
           <p>Vex7 (3KH0)</p>
           <button onclick="classic('./g_file/vex7/')" id="tab-button">Play</button>
+        </div>
+      </div>
+      <!---->
+       <!---->
+       <div class="container">
+        <div class="image-container">
+          <img src="./SeismeticImage/GAMES/plantsvszombies.webp" alt="GameImage" class="rounded-image">
+        </div>
+        <div class="text-container">
+          <p>Plants Vs Zombies</p>
+          <button onclick="openWindow('https://images-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fplants-vs-zombies.xml')" id="tab-button">Play</button>
         </div>
       </div>
       <!---->
@@ -404,6 +452,50 @@
         <div class="text-container">
           <p>Elastic Man</p>
           <button onclick="openWindow('https://d21u3ic0kp9e91.cloudfront.net/elasticman/0/index.html')" id="tab-button">Play</button>
+        </div>
+      </div>
+      <!---->
+      <!---->
+      <div class="container">
+        <div class="image-container">
+          <img src="./SeismeticImage/GAMES/mario-kart-64.webp" alt="GameImage" class="rounded-image">
+        </div>
+        <div class="text-container">
+          <p>Mario Kart 64</p>
+          <button onclick="openWindow('https://f.kbhgames.com/r/n64/game.php?file=mario-kart-64.zip')" id="tab-button">Play</button>
+        </div>
+      </div>
+      <!---->
+      <!---->
+      <div class="container">
+        <div class="image-container">
+          <img src="./SeismeticImage/GAMES/gettingoverit.png" alt="GameImage" class="rounded-image">
+        </div>
+        <div class="text-container">
+          <p>Getting over it</p>
+          <button onclick="classic('./g_file/GettingOverItScratched.html')" id="tab-button">Play</button>
+        </div>
+      </div>
+      <!---->
+      <!---->
+      <div class="container">
+        <div class="image-container">
+          <img src="./SeismeticImage/GAMES/mrmine.webp" alt="GameImage" class="rounded-image">
+        </div>
+        <div class="text-container">
+          <p>MrMine</p>
+          <button onclick="openWindow('https://www.coolmathgames.com/0-mr-mine/play')" id="tab-button">Play</button>
+        </div>
+      </div>
+      <!---->
+      <!---->
+      <div class="container">
+        <div class="image-container">
+          <img src="./SeismeticImage/GAMES/snowballio.webp" alt="GameImage" class="rounded-image">
+        </div>
+        <div class="text-container">
+          <p>Snowball.io</p>
+          <button onclick="openWindow('https://games.crazygames.com/en_US/snowball-io/index.html')" id="tab-button">Play</button>
         </div>
       </div>
       <!---->
@@ -696,6 +788,17 @@
       <!---->
       <div class="container">
         <div class="image-container">
+          <img src="./SeismeticImage/GAMES/angrybirds.jpg" alt="GameImage" class="rounded-image">
+        </div>
+        <div class="text-container">
+          <p>Angry Birds</p>
+          <button onclick="openWindow('https://cdn-game.gombis.com/2/Angry-Birds/')" id="tab-button">Play</button>
+        </div>
+      </div>
+      <!---->
+      <!---->
+      <div class="container">
+        <div class="image-container">
           <img src="./SeismeticImage/GAMES/baldi.png" alt="GameImage" class="rounded-image">
         </div>
         <div class="text-container">
@@ -792,29 +895,8 @@
         </div>
       </div>
       <!---->
-      <!---->
-      <div class="container">
-        <div class="image-container">
-          <img src="./SeismeticImage/GAMES/example" alt="GameImage" class="rounded-image">
-        </div>
-        <div class="text-container">
-          <p>Example</p>
-          <button onclick="openWindow('example')" id="tab-button">Play</button>
-        </div>
-      </div>
-      <!---->
-      <!---->
-      <div class="container">
-        <div class="image-container">
-          <img src="./SeismeticImage/GAMES/example" alt="GameImage" class="rounded-image">
-        </div>
-        <div class="text-container">
-          <p>Example</p>
-          <button onclick="openWindow('example')" id="tab-button">Play</button>
-        </div>
-      </div>
-      <!---->
     </div>
+    <a class="balls" id="my-link" onclick="removeElements()">Remove Particles for more FPS</a>
     <div id="particles-js">Particles div content</div>
     <span class="js-count-particles">--</span>
     <script src="./JS/min.js"></script>

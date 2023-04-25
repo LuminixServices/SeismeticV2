@@ -224,6 +224,17 @@ a {
   border-radius: 20px;
 }
 
+.balls {
+  margin-top: 45px;
+  text-align: center;
+  display: block;
+  padding: 10px 20px;
+  background-color: #272727;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+}
+
 a:hover {
   text-align: center;
   background-color: #3d3d3d;
@@ -288,4 +299,42 @@ a:hover {
 #tab-p {
   margin: 0;
   font-size: 14px;
+}
+
+h1 {
+  color: white;
+}
+
+/* Width and color of the scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+}
+
+/* Style of the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #222b23;
+  border-radius: 10px;
+}
+
+/* Style of the scrollbar track */
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+#searchbar {
+  margin-top: 18px;
+  text-align: center;
+  display: block;
+  padding: 10px 20px;
+  background-color: #272727;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+#country {
+  text-align: center;
+  color: #a9a9a9;
 }

@@ -1,7 +1,7 @@
 {
-  "name": "incognito",
-  "version": "1.0.0",
-  "description": "Unofficial Incognito easy deployment version with TompHTTP bare server included.",
+  "name": "seismeticv2",
+  "version": "2.0.0",
+  "description": "The Second version of the original Seismetic",
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
@@ -17,15 +17,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amethystnetwork-dev/Incognito"
+    "url": "git+https://github.com/SeismeticServices/Incognito-SeismeticV2"
   },
   "keywords": [
-    "unoffical",
+    "interstellar",
     "ultraviolet",
-    "unblock",
+    "fart",
     "titaniumnetwork",
     "bypass-filter",
-    "amethystnetwork-dev"
+    "Seismetic"
   ],
   "author": "",
   "license": "GPL-3.0-or-later",

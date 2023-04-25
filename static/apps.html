@@ -28,6 +28,7 @@
     <script src="./JS/particles.js" defer></script>
     <script src="index.js" defer></script>
     <script src="./JS/window.js" defer></script>
+    <script src="./JS/find.js" defer></script>
     <script src="./index.js" defer></script>
     <link rel="stylesheet" href="./styling/windows.css" />
   </head>
@@ -40,7 +41,7 @@
         <li><a href="index.html">Search</a></li>
       </ul>
     </nav> 
-    <a id="my-link" onclick="removeElements()">Remove Particles for more FPS</a>
+    <input class="searchbar" id="searchbar" name="search" onkeyup="search_item()" placeholder="Search.." tag="searchbar" type="text" />
     <div class="center">
       <!---->
       <div class="container">
@@ -49,7 +50,7 @@
         </div>
         <div class="text-container">
           <p>Google</p>
-          <button onclick="openWindow('https://gogle.com')" id="tab-button">Launch</button>
+          <button onclick="openWindow('https://google.com')" id="tab-button">Launch</button>
         </div>
       </div>
       <!---->
@@ -144,6 +145,17 @@
       <!---->
       <div class="container">
         <div class="image-container">
+          <img src="./SeismeticImage/apps/youtubemusic.webp" alt="Your Image" class="rounded-image">
+        </div>
+        <div class="text-container">
+          <p>Youtube Music</p>
+          <button onclick="openWindow('https://music.youtube.com')" id="tab-button">Launch</button>
+        </div>
+      </div>
+      <!---->
+      <!---->
+      <div class="container">
+        <div class="image-container">
           <img src="./SeismeticImage/apps/xbox.png" alt="Your Image" class="rounded-image">
         </div>
         <div class="text-container">
@@ -181,7 +193,7 @@
         </div>
         <div class="text-container">
           <p>FlixHQ</p>
-          <button onclick="openWindow('https://flixhq.org/')" id="tab-button">Launch</button>
+          <button onclick="openWindow('https://flixhq.to/')" id="tab-button">Launch</button>
         </div>
       </div>
       <!---->
@@ -307,6 +319,7 @@
       </div>
       <!---->
     </div>
+    <a id="my-link" onclick="removeElements()">Remove Particles for more FPS</a>
     <div id="particles-js">Particles div content</div>
     <span class="js-count-particles">--</span>
     <script src="./JS/min.js"></script>

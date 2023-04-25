@@ -1,7 +1,7 @@
 {
-    "name": "Incognito",
-    "description": "Unofficial Incognito easy deployment version with TompHTTP bare server included.",
-    "repository": "https://github.com/amethystnetwork-dev/Incognito",
-    "logo": "https://github.com/amethystnetwork-dev/Incognito/blob/main/static/index.svg?raw=true",
-    "keywords": ["unoffical", "ultraviolet", "unblock", "titaniumnetwork", "bypass-filter", "amethystnetwork-dev"]
+    "name": "SeismeticV2",
+    "description": "The new version of the original proxy Seismetic",
+    "repository": "https://github.com/SeismeticServices/Incognito-SeismeticV2",
+    "logo": "https://github.com/SeismeticServices/Incognito-SeismeticV2/blob/main/static/SeismeticImage/Sm.png?raw=true",
+    "keywords": ["seismeticv2", "tiggles", "yes", "titaniumnetwork", "jiggles", "ballsack"]
 }
