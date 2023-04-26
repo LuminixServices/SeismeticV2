@@ -31,7 +31,7 @@ function openWindow(url) {
 
   // create the top bar with buttons
   var topbar = document.createElement('div');
-  topbar.style.background = '#030d03';
+  topbar.style.background = '#333333';
   topbar.style.color = 'white';
   topbar.style.padding = '5px';
   topbar.style.display = 'flex';
@@ -91,7 +91,7 @@ function classic(url) {
 
  // create the top bar with buttons
  var topbar = document.createElement('div');
- topbar.style.background = '#030d03';
+ topbar.style.background = '#333333';
  topbar.style.color = 'white';
  topbar.style.padding = '5px';
  topbar.style.display = 'flex';
