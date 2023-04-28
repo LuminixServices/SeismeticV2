@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Change Location Example</title>
+  </head>
+  <body>
+    <label for="location-input">Enter a location:</label>
+    <input type="text" id="location-input" name="location-input">
+    <button onclick="updateLocation()">Update Location</button>
+    
+    <script>
+      function updateLocation() {
+        var newLocation = document.getElementById("location-input").value;
+        window.location.href = newLocation;
+      }
+    </script>
+  </body>
+</html>
