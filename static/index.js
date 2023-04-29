@@ -1,4 +1,3 @@
-// SKIDDED FROM BALLBANG BECAUSE THEY SKIDDED OUR CODE🤣
 const form = document.querySelector('form');
 const input = document.querySelector('input');
 var hash = window.location.hash;
