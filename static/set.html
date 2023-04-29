@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Seismetic</title>
+    <meta name="googlebot" content="noindex, nofollow, nosnippet" />
+    <link rel="shortcut icon" content="favicon.ico" />
+    <link rel="stylesheet" href="./styling/theme.css" />
+    <script src="uv/uv.bundle.js" defer></script>
+    <script src="uv/uv.config.js" defer></script>
+    <script src="./JS/particles.js" defer></script>
+    <script src="index.js" defer></script>
+    <script src="./JS/safemode.js" defer></script>
+    <script src="JS/sets.js" defer></script>
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="apps.html">Apps</a></li>
+        <li><a href="index.html">Search</a></li>
+        <li><a href="wb.html">WidgetBot</a></li>
+        <li><a href="set.html">Settings</a></li>
+      </ul>
+    </nav> 
+      <h1>SafeMode Settings</h1>
+<p>Select a button to enable or disable SafeMode: Safemode basically removes all Inapapriopiate things from the site like PH and OF</p>
+<div>
+  <button id="safemode-enable">Enable</button>
+  <button id="safemode-disable">Disable</button>
+</div>
+<p id="safemode-output"></p>
+
+<h1>Auto Blank</h1>
+<p id="admin-contact"></p>
+<p>Select a button to enable or disable Auto Blank mode: Basically will launch SeismeticV2 in a blank tab which will hide it from the history and relay</p>
+<div>
+  <button id="aboutblank-enable">Enable</button>
+  <button id="aboutblank-disable">Disable</button>
+</div>
+<p id="aboutblank-output"></p>
+
+<h1>Auto Remove Particles</h1>
+<p>Automatically removes the particles from the site</p>
+<div>
+  <button id="noparticles-enable">Enable</button>
+  <button id="noparticles-disable">Disable</button>
+</div>
+<p id="noparticles-output"></p>
+
+<h1>Force Static Mode</h1>
+<p>Removes all the Ultraviolet and shows only the static games</p>
+<div>
+  <button id="forcestatic-enable">Enable</button>
+  <button id="forcestatic-disable">Disable</button>
+</div>
+<p id="forcestatic-output"></p>
+
+
+<h1>Manual About:blank</h1>
+<p>Manually launches about:blank</p>
+<div>
+  <button onclick="aboutblank()">Launch in about:blank</button>
+</div>
+
+<script>
+  var safemodeEnableButton = document.getElementById("safemode-enable");
+  safemodeEnableButton.addEventListener("click", function() {
+    document.cookie = "SafeMode=true; path=/";
+    location.reload();
+  });
+
+  var safemodeDisableButton = document.getElementById("safemode-disable");
+  safemodeDisableButton.addEventListener("click", function() {
+    document.cookie = "SafeMode=false; path=/";
+    location.reload();
+  });
+
+  var safeModeCookie = document.cookie.replace(/(?:(?:^|.*;\s*)SafeMode\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+  if (!safeModeCookie) {
+    document.cookie = "SafeMode=false; path=/";
+    safeModeCookie = "false";
+  }
+  if (safeModeCookie === "true") {
+    var output = document.getElementById("safemode-output");
+    output.textContent = "SafeMode is currently enabled.";
+    safemodeEnableButton.disabled = true;
+    safemodeDisableButton.disabled = false;
+  } else {
+    var output = document.getElementById("safemode-output");
+    output.textContent = "SafeMode is currently disabled.";
+    safemodeEnableButton.disabled = false;
+    safemodeDisableButton.disabled = true;
+  }
+
+  var aboutblankEnableButton = document.getElementById("aboutblank-enable");
+  aboutblankEnableButton.addEventListener("click", function() {
+    document.cookie = "aboutblank=true; path=/";
+    location.reload();
+  });
+
+  var aboutblankDisableButton = document.getElementById("aboutblank-disable");
+  aboutblankDisableButton.addEventListener("click", function() {
+    document.cookie = "aboutblank=false; path=/";
+    location.reload();
+  });
+
+  var aboutblankCookie = document.cookie.replace(/(?:(?:^|.*;\s*)aboutblank\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+  if (!aboutblankCookie) {
+    document.cookie = "aboutblank=false; path=/";
+    aboutblankCookie = "false";
+  }
+  if (aboutblankCookie === "true") {
+    var output = document.getElementById("aboutblank-output");
+    output.textContent = "Auto Blank mode is currently enabled.";
+    aboutblankEnableButton.disabled = true;
+    aboutblankDisableButton.disabled = false;
+  } else {
+    var output = document.getElementById("aboutblank-output");
+    output.textContent = "Auto Blank mode is currently disabled.";
+    aboutblankEnableButton.disabled = false;
+    aboutblankDisableButton.disabled = true;
+  }
+
+  /* particles */
+  var aboutblankEnableButton = document.getElementById("noparticles-enable");
+  aboutblankEnableButton.addEventListener("click", function() {
+    document.cookie = "noparticles=true; path=/";
+    location.reload();
+  });
+
+  var aboutblankDisableButton = document.getElementById("noparticles-disable");
+  aboutblankDisableButton.addEventListener("click", function() {
+    document.cookie = "noparticles=false; path=/";
+    location.reload();
+  });
+
+  var aboutblankCookie = document.cookie.replace(/(?:(?:^|.*;\s*)noparticles\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+  if (!aboutblankCookie) {
+    document.cookie = "noparticles=false; path=/";
+    aboutblankCookie = "false";
+  }
+  if (aboutblankCookie === "true") {
+    var output = document.getElementById("noparticles-output");
+    output.textContent = "noparticles mode is currently enabled.";
+    aboutblankEnableButton.disabled = true;
+    aboutblankDisableButton.disabled = false;
+  } else {
+    var output = document.getElementById("noparticles-output");
+    output.textContent = "noparticles mode is currently disabled.";
+    aboutblankEnableButton.disabled = false;
+    aboutblankDisableButton.disabled = true;
+  }
+
+   /* StaticMode */
+   var aboutblankEnableButton = document.getElementById("forcestatic-enable");
+  aboutblankEnableButton.addEventListener("click", function() {
+    document.cookie = "forcestatic=true; path=/";
+    location.reload();
+  });
+
+  var aboutblankDisableButton = document.getElementById("forcestatic-disable");
+  aboutblankDisableButton.addEventListener("click", function() {
+    document.cookie = "forcestatic=false; path=/";
+    location.reload();
+  });
+
+  var aboutblankCookie = document.cookie.replace(/(?:(?:^|.*;\s*)forcestatic\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+  if (!aboutblankCookie) {
+    document.cookie = "forcestatic=false; path=/";
+    aboutblankCookie = "false";
+  }
+  if (aboutblankCookie === "true") {
+    var output = document.getElementById("forcestatic-output");
+    output.textContent = "forcestatic mode is currently enabled.";
+    aboutblankEnableButton.disabled = true;
+    aboutblankDisableButton.disabled = false;
+  } else {
+    var output = document.getElementById("forcestatic-output");
+    output.textContent = "forcestatic mode is currently disabled.";
+    aboutblankEnableButton.disabled = false;
+    aboutblankDisableButton.disabled = true;
+  }
+</script>
+
+<script>
+  function aboutblank() {
+    let inFrame
+try{inFrame=window!==top}catch(e){inFrame=true}
+if(!inFrame&&!navigator.userAgent.includes("Firefox")){const popup=open("about:blank","_blank")
+if(!popup||popup.closed){alert("Allow popups and redirects to hide this from showing up in your history.")}else{const doc=popup.document
+const iframe=doc.createElement("iframe")
+const style=iframe.style
+const link=doc.createElement("link")
+const name=localStorage.getItem("name")||"My Drive - Google Drive";const icon=localStorage.getItem("icon")||"https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png";doc.title=name;link.rel="icon";link.href=icon;iframe.src=location.href
+style.position="fixed"
+style.top=style.bottom=style.left=style.right=0
+style.border=style.outline="none"
+style.width=style.height="100%"
+doc.head.appendChild(link);doc.body.appendChild(iframe)
+location.replace("https://google.com")}}
+  }
+</script>
+    <div id="particles-js">Particles div content</div>
+    <span class="js-count-particles">--</span>
+    <script src="./JS/min.js"></script>
+    <script>
+      var domain = window.location.hostname;
+      var sentence = "Once this is enabled you can go to the website https://[NAME]/hide-history/ And it will automatically hide this in your history and you wont have to access it through your files";
+      var updatedSentence = sentence.replace("[NAME]", domain);
+      document.getElementById("admin-contact").innerHTML = updatedSentence;
+    </script>
+  </body>
+</html>

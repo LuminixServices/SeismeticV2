@@ -2,20 +2,20 @@
 <html>
   <head>
     <script>
-		function removeElements() {
-			// Get the elements to remove
-			var particlesDiv = document.getElementById("particles-js");
-			var countSpan = document.querySelector(".js-count-particles");
-			var scriptTag = document.querySelector("script[src='./JS/min.js']");
-      var link = document.querySelector("#my-link");
-
-			// Remove the elements from the DOM
-			particlesDiv.remove();
-			countSpan.remove();
-			scriptTag.remove();
-      link.remove();
-		}
-    </script>
+      function removeElements() {
+        // Get the elements to remove
+        var particlesDiv = document.getElementById("particles-js");
+        var countSpan = document.querySelector(".js-count-particles");
+        var scriptTag = document.querySelector("script[src='./JS/min.js']");
+        var link = document.querySelector("#my-link");
+  
+        // Remove the elements from the DOM
+        particlesDiv.remove();
+        countSpan.remove();
+        scriptTag.remove();
+        link.remove();
+      }
+      </script>
     <meta charset="utf-8" />
     <title>Seismetic | Games</title>
     <meta name="googlebot" content="noindex, nofollow, nosnippet" />
@@ -27,6 +27,7 @@
     <script src="search.js" defer></script>
     <script src="./JS/particles.js" defer></script>
     <script src="index.js" defer></script>
+    <script src="JS/sets.js" defer></script>
     <script src="./JS/window.js" defer></script>
     <script src="./index.js" defer></script>
     <script src="./JS/find.js" defer></script>
@@ -40,6 +41,7 @@
         <li><a href="apps.html">Apps</a></li>
         <li><a href="index.html">Search</a></li>
         <li><a href="wb.html">WidgetBot</a></li>
+        <li><a href="set.html">Settings</a></li>
       </ul>
     </nav> 
     <input class="searchbar" id="searchbar" name="search" onkeyup="search_item()" placeholder="Search.." tag="searchbar" type="text" />
@@ -77,6 +79,28 @@
         <div class="text-container">
           <p>Zombs Royale</p>
           <button onclick="openWindow('https://zombsroyale.io')" id="tab-button">Play</button>
+        </div>
+      </div>
+      <!---->
+      <!---->
+      <div class="container">
+        <div class="image-container">
+          <img src="g_file/temple-run-2/img/og-icon.png" alt="Your Image" class="rounded-image">
+        </div>
+        <div class="text-container">
+          <p>Temple Run 2 </p>
+          <button onclick="classic('g_file/temple-run-2/')" id="tab-button">Play</button>
+        </div>
+      </div>
+      <!---->
+      <!---->
+      <div class="container">
+        <div class="image-container">
+          <img src="SeismeticImage/GAMES/fruitninja.png" alt="Your Image" class="rounded-image">
+        </div>
+        <div class="text-container">
+          <p>Fruit Ninja </p>
+          <button onclick="classic('https://games.crazygames.com/en_US/fruit-ninja/index.html')" id="tab-button">Play</button>
         </div>
       </div>
       <!---->
@@ -1005,7 +1029,7 @@
       </div>
       <!---->
     </div>
-    <a class="balls" id="my-link" onclick="removeElements()">Remove Particles for more FPS</a>
+    <a id="my-link" onclick="removeElements()">Remove Particles for more FPS</a>
     <div id="particles-js">Particles div content</div>
     <span class="js-count-particles">--</span>
     <script src="./JS/min.js"></script>
