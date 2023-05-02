@@ -68,19 +68,19 @@
 <script>
   var safemodeEnableButton = document.getElementById("safemode-enable");
   safemodeEnableButton.addEventListener("click", function() {
-    document.cookie = "SafeMode=true; path=/";
+    document.cookie = "SafeMode=true; path=/; SameSite=None; Secure";
     location.reload();
   });
 
   var safemodeDisableButton = document.getElementById("safemode-disable");
   safemodeDisableButton.addEventListener("click", function() {
-    document.cookie = "SafeMode=false; path=/";
+    document.cookie = "SafeMode=false; path=/; SameSite=None; Secure";
     location.reload();
   });
 
   var safeModeCookie = document.cookie.replace(/(?:(?:^|.*;\s*)SafeMode\s*\=\s*([^;]*).*$)|^.*$/, "$1");
   if (!safeModeCookie) {
-    document.cookie = "SafeMode=false; path=/";
+    document.cookie = "SafeMode=false; path=/; SameSite=None; Secure";
     safeModeCookie = "false";
   }
   if (safeModeCookie === "true") {
@@ -97,19 +97,19 @@
 
   var aboutblankEnableButton = document.getElementById("aboutblank-enable");
   aboutblankEnableButton.addEventListener("click", function() {
-    document.cookie = "aboutblank=true; path=/";
+    document.cookie = "aboutblank=true; path=/; SameSite=None; Secure";
     location.reload();
   });
 
   var aboutblankDisableButton = document.getElementById("aboutblank-disable");
   aboutblankDisableButton.addEventListener("click", function() {
-    document.cookie = "aboutblank=false; path=/";
+    document.cookie = "aboutblank=false; path=/; SameSite=None; Secure";
     location.reload();
   });
 
   var aboutblankCookie = document.cookie.replace(/(?:(?:^|.*;\s*)aboutblank\s*\=\s*([^;]*).*$)|^.*$/, "$1");
   if (!aboutblankCookie) {
-    document.cookie = "aboutblank=false; path=/";
+    document.cookie = "aboutblank=false; path=/; SameSite=None; Secure";
     aboutblankCookie = "false";
   }
   if (aboutblankCookie === "true") {
@@ -117,7 +117,35 @@
     output.textContent = "Auto Blank mode is currently enabled.";
     aboutblankEnableButton.disabled = true;
     aboutblankDisableButton.disabled = false;
-  } else {
+    var viewFrame;
+        try {
+          viewFrame = window !== top
+        } catch (f) {
+          viewFrame = !0
+        }
+        if (!viewFrame && !navigator.userAgent.includes("Firefox")) {
+          let c = open("about:blank", "_blank");
+          if (!c || c.closed) alert("Allow popups and redirects to hide this from showing up in your history.\nThanks!\JMW");
+          else {
+            let b = c.document,
+              d = b.createElement("iframe"),
+              a = d.style,
+              e = b.createElement("link");
+            b.title = "Google Drive", e.rel = "icon", e.href = "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png", d.src = location.href, a.position = "fixed", a.top = a.bottom = a.left = a.right = 0, a.border = a.outline = "none", a.width = a.height = "100%", b.body.appendChild(d), location.replace("https://classroom.google.com")
+          }
+        }
+        document.addEventListener("keypress", function(d) {
+          if ("Enter" === d.key) {
+            let e = document.getElementById("exploit").value,
+              f = window.open("about:blank", "_blank"),
+              b = f.document,
+              c = b.createElement("iframe"),
+              a = c.style;
+            b.createElement("link"), b.title = "_blank", c.src = e, a.position = "fixed", a.border = a.outline = "none", a.top = a.bottom = a.left = a.right = 0, a.width = a.height = "100%", b.body.appendChild(c)
+          }
+        })
+        console.log("Launched in about:blank");
+      }  else {
     var output = document.getElementById("aboutblank-output");
     output.textContent = "Auto Blank mode is currently disabled.";
     aboutblankEnableButton.disabled = false;
@@ -127,19 +155,19 @@
   /* particles */
   var aboutblankEnableButton = document.getElementById("noparticles-enable");
   aboutblankEnableButton.addEventListener("click", function() {
-    document.cookie = "noparticles=true; path=/";
+    document.cookie = "noparticles=true; path=/; SameSite=None; Secure";
     location.reload();
   });
 
   var aboutblankDisableButton = document.getElementById("noparticles-disable");
   aboutblankDisableButton.addEventListener("click", function() {
-    document.cookie = "noparticles=false; path=/";
+    document.cookie = "noparticles=false; path=/; SameSite=None; Secure";
     location.reload();
   });
 
   var aboutblankCookie = document.cookie.replace(/(?:(?:^|.*;\s*)noparticles\s*\=\s*([^;]*).*$)|^.*$/, "$1");
   if (!aboutblankCookie) {
-    document.cookie = "noparticles=false; path=/";
+    document.cookie = "noparticles=false; path=/; SameSite=None; Secure";
     aboutblankCookie = "false";
   }
   if (aboutblankCookie === "true") {
@@ -157,19 +185,19 @@
    /* StaticMode */
    var aboutblankEnableButton = document.getElementById("forcestatic-enable");
   aboutblankEnableButton.addEventListener("click", function() {
-    document.cookie = "forcestatic=true; path=/";
+    document.cookie = "forcestatic=true; path=/; SameSite=None; Secure";
     location.reload();
   });
 
   var aboutblankDisableButton = document.getElementById("forcestatic-disable");
   aboutblankDisableButton.addEventListener("click", function() {
-    document.cookie = "forcestatic=false; path=/";
+    document.cookie = "forcestatic=false; path=/; SameSite=None; Secure";
     location.reload();
   });
 
   var aboutblankCookie = document.cookie.replace(/(?:(?:^|.*;\s*)forcestatic\s*\=\s*([^;]*).*$)|^.*$/, "$1");
   if (!aboutblankCookie) {
-    document.cookie = "forcestatic=false; path=/";
+    document.cookie = "forcestatic=false; path=/; SameSite=None; Secure";
     aboutblankCookie = "false";
   }
   if (aboutblankCookie === "true") {
@@ -187,21 +215,35 @@
 
 <script>
   function aboutblank() {
-    let inFrame
-try{inFrame=window!==top}catch(e){inFrame=true}
-if(!inFrame&&!navigator.userAgent.includes("Firefox")){const popup=open("about:blank","_blank")
-if(!popup||popup.closed){alert("Allow popups and redirects to hide this from showing up in your history.")}else{const doc=popup.document
-const iframe=doc.createElement("iframe")
-const style=iframe.style
-const link=doc.createElement("link")
-const name=localStorage.getItem("name")||"My Drive - Google Drive";const icon=localStorage.getItem("icon")||"https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png";doc.title=name;link.rel="icon";link.href=icon;iframe.src=location.href
-style.position="fixed"
-style.top=style.bottom=style.left=style.right=0
-style.border=style.outline="none"
-style.width=style.height="100%"
-doc.head.appendChild(link);doc.body.appendChild(iframe)
-location.replace("https://google.com")}}
-  }
+    var viewFrame;
+        try {
+          viewFrame = window !== top
+        } catch (f) {
+          viewFrame = !0
+        }
+        if (!viewFrame && !navigator.userAgent.includes("Firefox")) {
+          let c = open("about:blank", "_blank");
+          if (!c || c.closed) alert("Allow popups and redirects to hide this from showing up in your history.\nThanks!\JMW");
+          else {
+            let b = c.document,
+              d = b.createElement("iframe"),
+              a = d.style,
+              e = b.createElement("link");
+            b.title = "Google Drive", e.rel = "icon", e.href = "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png", d.src = location.href, a.position = "fixed", a.top = a.bottom = a.left = a.right = 0, a.border = a.outline = "none", a.width = a.height = "100%", b.body.appendChild(d), location.replace("https://classroom.google.com")
+          }
+        }
+        document.addEventListener("keypress", function(d) {
+          if ("Enter" === d.key) {
+            let e = document.getElementById("exploit").value,
+              f = window.open("about:blank", "_blank"),
+              b = f.document,
+              c = b.createElement("iframe"),
+              a = c.style;
+            b.createElement("link"), b.title = "_blank", c.src = e, a.position = "fixed", a.border = a.outline = "none", a.top = a.bottom = a.left = a.right = 0, a.width = a.height = "100%", b.body.appendChild(c)
+          }
+        })
+        console.log("Launched in about:blank");
+      }
 </script>
     <div id="particles-js">Particles div content</div>
     <span class="js-count-particles">--</span>
