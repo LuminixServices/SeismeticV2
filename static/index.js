@@ -28,15 +28,9 @@ form.addEventListener('submit', async event => {
 const lols = document.querySelector('#uv-form');
 const mvov = document.querySelector('#uv-address');
 
-// Add an event listener to the form that listens for the "submit" event
 lols.addEventListener('submit', function(event) {
-  // Prevent the default form submission behavior
   event.preventDefault();
-
-  // Get the value of the input field
   const url = mvov.value;
-
-  // Call the existing openSite() function with the URL as the argument
   openSite(url);
 });
 
