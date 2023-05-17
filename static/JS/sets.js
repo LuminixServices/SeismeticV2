@@ -1,3 +1,28 @@
+// Create and style the <p> element
+const paragraph = document.createElement("p");
+paragraph.id = "userid";
+paragraph.style.position = "fixed";
+paragraph.style.zIndex = "32";
+paragraph.style.bottom = "10px";
+paragraph.style.left = "10px";
+paragraph.style.padding = "5px";
+paragraph.style.borderRadius = "5px";
+paragraph.style.backgroundColor = "transparent";
+paragraph.style.color = "gray";
+
+// Get the value from the "B64_User" cookie
+const userId = document.cookie
+  .split(";")
+  .map(cookie => cookie.trim())
+  .find(cookie => cookie.startsWith("B64_User="))
+  ?.split("=")[1];
+
+// Set the retrieved value as the content of the <p> element
+paragraph.textContent = userId || "";
+
+// Append the <p> element to the document body
+document.body.appendChild(paragraph);
+
 
 if (document.cookie.indexOf("noparticles=true") !== -1) {
       var particlesDiv = document.getElementById("particles-js");
@@ -62,3 +87,4 @@ if (document.cookie.indexOf("forcestatic=true") !== -1) {
     }
   }
 }
+

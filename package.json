@@ -31,7 +31,8 @@
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "@tomphttp/bare-server-node": "^1.2.3",
-    "serve-static": "^1.15.0"
+    "serve-static": "^1.15.0",
+    "express": "^4.17.1"
   },
   "engines": {
     "npm": ">=8.0.0",
