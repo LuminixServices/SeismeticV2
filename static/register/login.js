@@ -2,21 +2,22 @@ window.addEventListener('DOMContentLoaded', () => {
     const encodedData = window.location.hash.substr(1); // Extract the encoded data from the URL hash
     const decodedData = atob(encodedData); // Decode the Base64 data
 
-    const cookieName = 'B64_User';
-    const existingCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith(`${cookieName}=`));
+const cookieName = 'B64_User';
+const existingCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith(`${cookieName}=`));
 
-    if (existingCookie) {
-        // Update the existing cookie value
-        const cookieValue = existingCookie.split('=')[1].trim();
+if (existingCookie) {
+    // Update the existing cookie value
+    const cookieValue = existingCookie.split('=')[1].trim();
 
-        if (cookieValue !== decodedData) {
-            // Create a new cookie with the updated value
-            document.cookie = `${cookieName}=${decodedData}; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/`;
-        }
-    } else {
-        // Create a new cookie if it doesn't exist
-        document.cookie = `${cookieName}=${decodedData}; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/`;
+    if (cookieValue !== decodedData) {
+        // Create a new cookie with the updated value
+        document.cookie = `${cookieName}=${decodedData}; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/; SameSite=None; Secure`;
     }
+} else {
+    // Create a new cookie if it doesn't exist
+    document.cookie = `${cookieName}=${decodedData}; expires=Thu, 01 Jan 2099 00:00:00 UTC; path=/; SameSite=None; Secure`;
+}
+
 
     // Fetch the user's IP address
     fetch('https://api.ipify.org/?format=json')
