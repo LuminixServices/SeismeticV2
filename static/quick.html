@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function openSite(url){
+window.navigator.serviceWorker.register('uv.sw-handler.js', {
+    scope: __uv$config.prefix
+}).then(() => {
+    // let url = input.value.trim();
+    window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
+});
+
+}
+function isUrl(val = ''){
+if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
+return false;
+};
+        </script>
+        <script>
+            const GET = window.location.hash.substr(1);
+            openSite(GET)
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
