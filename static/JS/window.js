@@ -128,3 +128,13 @@ function classic(url) {
  // add the container to the document
  document.body.appendChild(container);
 }
+
+
+function go(url) {
+  // Handles the certain request
+  navigator.serviceWorker.register('../uv.sw-handler.js', {
+    scope: __uv$config.prefix
+  }).then(() => {
+    window.location.href = __uv$config.prefix + encodeUrl(url);
+  });
+}

@@ -1,18 +1,37 @@
-
 <!DOCTYPE html>
 <html>
   <head>
+    <script>
+      function removeElements() {
+        // Get the elements to remove
+        var particlesDiv = document.getElementById("particles-js");
+        var countSpan = document.querySelector(".js-count-particles");
+        var scriptTag = document.querySelector("script[src='./JS/min.js']");
+        var link = document.querySelector("#my-link");
+  
+        // Remove the elements from the DOM
+        particlesDiv.remove();
+        countSpan.remove();
+        scriptTag.remove();
+        link.remove();
+      }
+      </script>
     <meta charset="utf-8" />
-    <title>Seismetic | Chat</title>
+    <title>Seismetic | Games</title>
     <meta name="googlebot" content="noindex, nofollow, nosnippet" />
-    <link rel="shortcut icon" content="favicon.ico" />
+    <link rel="shortcut icon" content="/SeismeticImage/Sm.png" />
     <link rel="stylesheet" href="./styling/theme.css" />
-    <link rel="stylesheet" href="./styling/widget.css" />
     <script src="uv/uv.bundle.js" defer></script>
     <script src="uv/uv.config.js" defer></script>
     <script src="register-sw.js" defer></script>
+    <script src="search.js" defer></script>
+    <script src="./JS/particles.js" defer></script>
     <script src="index.js" defer></script>
-    <script src="./JS/quickload.js" defer></script>
+    <script src="JS/sets.js" defer></script>
+    <script src="./JS/window.js" defer></script>
+    <script src="./index.js" defer></script>
+    <script src="./JS/find.js" defer></script>
+    <link rel="stylesheet" href="./styling/windows.css" />
   </head>
 
   <body>
@@ -21,12 +40,17 @@
         <li><a href="games.html">Games</a></li>
         <li><a href="apps.html">Apps</a></li>
         <li><a href="index.html">Search</a></li>
-        <li><a href="wb.html">Chat</a></li>
+        <li><a href="wb.html">(FIX) Chat</a></li>
         <li><a href="set.html">Settings</a></li>
       </ul>
-    </nav>
-    <div class="container">
-      <iframe src="./load.html#aHR0cHM6Ly9lLndpZGdldGJvdC5pby9jaGFubmVscy8xMDY5MzM1ODY3MDczNzY5NTkzLzExMDM0ODk3Mzc4NzM5NDg2ODIv" style="bottom: 0" scrolling="yes" frameborder="0" marginheight="0px" marginwidth="0px" allowfullscreen=""></iframe>
+    </nav> 
+    <div class="center">
+      <h1></h1>
+     <a onclick="go('https://e.widgetbot.io/channels/1069335867073769593/1103489737873948682/')">CLICK ME TO LOAD CHAT</a>
     </div>
+    </div>
+    <div id="particles-js">Particles div content</div>
+    <span class="js-count-particles">--</span>
+    <script src="./JS/min.js"></script>
   </body>
 </html>
